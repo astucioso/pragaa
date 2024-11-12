@@ -41,21 +41,8 @@
     <script>
         // Adicionar evento de clique no botão
         document.getElementById("reveal-button").addEventListener("click", function() {
-            // Substitua pelo caminho correto do seu arquivo de áudio hospedado no GitHub
-            const audio = new Audio('https://astucioso.github.io/pragaa/images/song.mp3');
-            
-            // Tocar a música
-            audio.play()
-                .then(() => {
-                    // Atrasar o redirecionamento para garantir que a música tenha tempo de tocar
-                    setTimeout(() => {
-                        window.location.href = "praga.html";
-                    }, 2000); // Atraso de 2 segundos (ajuste conforme necessário)
-                })
-                .catch((error) => {
-                    // Se houver erro ao tentar tocar a música, logar o erro
-                    console.error("Erro ao tentar tocar a música:", error);
-                });
+            // Redireciona para praga.html com um parâmetro na URL que indica para tocar a música
+            window.location.href = "praga.html?music=play";
         });
     </script>
 
