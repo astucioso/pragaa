@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revelar Perfil</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        #reveal-button {
+            background-color: #ff4081;
+            color: white;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #reveal-button:hover {
+            background-color: #ff1e69;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botão para revelar perfil -->
+    <button id="reveal-button">Revelar Perfil</button>
+
+    <script>
+        // Adicionar evento de clique no botão
+        document.getElementById("reveal-button").addEventListener("click", function() {
+            // Criar o elemento de áudio e tocá-lo
+            const audio = new Audio('images/song.mp3');
+            
+            // Tocar a música
+            audio.play()
+                .then(() => {
+                    // Redirecionar para a página praga.html somente depois de a música começar
+                    window.location.href = "praga.html";
+                })
+                .catch((error) => {
+                    // Se houver erro ao tentar tocar a música, logar o erro
+                    console.error("Erro ao tentar tocar a música:", error);
+                });
+        });
+    </script>
+
+</body>
+</html>
