@@ -143,6 +143,15 @@
     </div>
 
     <script>
+        // Função para tocar música se o parâmetro "music=play" estiver presente na URL
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('music') === 'play') {
+                const audio = new Audio('images/song.mp3');
+                audio.play();
+            }
+        };
+
         // Função para girar o quadrado com base na posição do mouse
         const profileContainer = document.getElementById('profile-container');
 
